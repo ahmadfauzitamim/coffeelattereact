@@ -8,7 +8,7 @@ const Product = () => {
     const [product, setProduct] = useState([])
     const getProduct = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/product?orderBy=id&sortBy=ASC&limit=100&page=1')
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/product?orderBy=id&sortBy=ASC&limit=100&page=1`)
             console.log(response);
             setProduct(response?.data?.data)
 
