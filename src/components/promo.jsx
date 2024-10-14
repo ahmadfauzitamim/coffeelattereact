@@ -43,8 +43,36 @@ const Promo = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='top-[340px] ml-12 flex flex-col -z-[999] absolute justify-between items-center w-[284] h-[400px] rounded-3xl bg-black'></div>
-                                    <div className='top-[340px] ml-24 flex flex-col -z-[9999] absolute justify-between items-center w-[284] h-[338px] rounded-3xl bg-red-950'></div>
+                                    <div className='top-[325px] ml-24 flex flex-col -z-[999] absolute justify-between items-center w-[284] h-[375px] rounded-3xl bg-black'>
+                                    <div key={index[1]} className='flex flex-col gab-8 items-center'>
+                                            <div className='flex flex-col gap-2 items-center'>
+                                                <img className='rounded-full shadow-lg shadow-gray-400 w-3/5' src={item.image} alt="" />
+                                                <div className='flex flex-col text-2xl font-bold'>{item.productName}</div>
+                                                <div className='flex flex-col'>{item.description}</div>
+                                            </div>
+                                            <div className='w-full relative border-b-2 p-2 border-black border-dashed'></div>
+                                            <div className='flex flex-col gap-2'>
+                                                <div className='p-2'>COUPONCODE</div>
+                                                <div className='text-md font-bold text-3xl'>{item.cuponcode}</div>
+                                                <div className='text-sm'>{item.date}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='top-[340px] ml-32 flex flex-col -z-[9999] absolute justify-between items-center w-[284] h-[338px] rounded-3xl bg-red-950'>
+                                    <div key={index[2]} className='flex flex-col gab-8 items-center'>
+                                            <div className='flex flex-col gap-2 items-center'>
+                                                <img className='rounded-full shadow-lg shadow-gray-400 w-3/5' src={item.image} alt="" />
+                                                <div className='flex flex-col text-2xl font-bold'>{item.productName}</div>
+                                                <div className='flex flex-col'>{item.description}</div>
+                                            </div>
+                                            <div className='w-full relative border-b-2 p-2 border-black border-dashed'></div>
+                                            <div className='flex flex-col gap-2'>
+                                                <div className='p-2'>COUPONCODE</div>
+                                                <div className='text-md font-bold text-3xl'>{item.cuponcode}</div>
+                                                <div className='text-sm'>{item.date}</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             )
                         })
