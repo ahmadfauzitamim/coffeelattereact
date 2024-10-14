@@ -53,7 +53,7 @@ const Promo = () => {
                 </div>
                 <div className='flex flex-col items-center gap-2'>
                     <div className='flex w-[284px] justify-center items-center bg-orange-950 rounded-3xl text-white py-4'>Apply Coupon</div>
-                    <div className='flex flex-col items-start justify-center '>
+                    <div className='flex flex-col items-start justify-center list-none '>
                     <h1 className='font-bold '>Trems and Condition</h1>
                     <li>1. You can only apply 1 coupon per day</li>
                     <li>2. It only for dine in</li>
