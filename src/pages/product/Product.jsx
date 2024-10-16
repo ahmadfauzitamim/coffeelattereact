@@ -3,12 +3,14 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import axios from 'axios'
 import Promo from '../../components/promo'
+import CartProduct from '../../components/CartProduct'
 
 const Product = () => {
     const [product, setProduct] = useState([])
+    const [page, setPage] = useState(1)
     const getProduct = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_HOST}/product?orderBy=id&sortBy=ASC&limit=100&page=1`)
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/product?orderBy=id&sortBy=ASC&limit=100&page=${page}`)
             console.log(response);
             setProduct(response?.data?.data)
 
@@ -19,7 +21,7 @@ const Product = () => {
         }
     }
     useState(() => {
-        getProduct()
+        getProduct([])
     })
 
 
@@ -38,16 +40,8 @@ const Product = () => {
                     </ul>
                     <div className='grid grid-cols-4 gap-8'>
                         {
-                            product.map((item) => {
-                                return (
-                                    <div className='p-4 border shadow-lg shadow-gray-400 flex flex-col items-center justify-between py-8 gap-6 rounded-3xl'>
-                                        <img className='rounded-full shadow-lg shadow-gray-400 w-3/4' src={item.image} alt="product" />
-                                        <div>
-                                            <div className='font-bold'>{item.name}</div>
-                                            <div className='font-bold'> IDR {item.price}</div>
-                                        </div>
-                                    </div>
-                                )
+                            product.map((item, index) => {
+                                return <CartProduct item={item} key={index}/>
                             })
                         }
 

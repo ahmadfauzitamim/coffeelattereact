@@ -8,6 +8,7 @@ import Profile from './pages/profile/Profile';
 import Product from './pages/product/Product';
 import Cart from './pages/cart/Cart';
 import History from './pages/history/History';
+import ProductDetail from './pages/Product_Detail/ProductDetail';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/product' element={<Product/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/history' element={<History/>}/>
+          <Route path='/product/:id' element={<ProductDetail/>}/>
         </Routes>
       </BrowserRouter>
     </div>
