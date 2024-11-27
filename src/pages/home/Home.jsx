@@ -12,7 +12,7 @@ const Home = () => {
           </div>
           <div className="content relative">
             <div className="conten-hero relative">
-              <div className=" flex justify-end ">
+              <div className=" flex justify-center ">
                 <div className="flex relative p-8 w-50 h-28 ">
                   {/* <img className="icon-search  h-10" src="/images/search.svg" alt="search.svg" /> */}
                   <input className="placeholder-search rounded-3xl border-none" type="text" placeholder="Search" />

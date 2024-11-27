@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Route, useNavigate } from 'react-router-dom'
+import Navitem from './Navitem'
 
 
 
@@ -38,16 +39,40 @@ function Navbar() {
         getProfile()
     }, [])
 
+    const dataNav = [
+        {
+            name: "Home",
+            Route: "/"
+        },
+        {
+            name: "Product",
+            Route: "/product"
+        },
+        {
+            name: "You Cart",
+            Route: "/cart"
+        },
+        {
+            name: "History",
+            Route: "/history"
+        }
+    ]
+
     return (
-        <div className='w-full flex items-center justify-between p-8'>
-            <div className='logo font-bold text-lg'>coffeelatte</div>
-            <div className='navigasi flex items-center justify-center gap-x-8 list-none'>
-                <li onClick={() => {
-                    navigation("/")
-                }} className='cursor-pointer hover:text-orange-900 hover:font-bold'>Home</li>
-                <Link to={'/product'} className='cursor-pointer hover:text-orange-900 hover:font-bold'> Product</Link>
-                <Link to={'/cart'} className='cursor-pointer hover:text-orange-900 hover:font-bold'>Your Cart</Link>
-                <Link to={'/history'} className='cursor-pointer hover:text-orange-900 hover:font-bold'>History</Link>
+        
+        <div className='flex items-center justify-between mx-auto px-4 sm:px-16 py-6 border-b-2'>
+            <div className='flex items-center justify-center gap-2 order-1 sm:order-2 lg:order-1'>
+                <img src="/images/logo-coffe.svg" alt="Logo Coffee" />
+                <div className="logo font-bold text-lg">Coffeeshop</div>
+            </div>
+            <div className="lg:flex items-center justify-center gap-x-10 list-none hidden lg:order-2">
+                {
+                    dataNav.map((item, index,) => {
+                        return (
+                            <Navitem key={index} to={item.Route} item={item.Route} name={item.name} />
+                        )
+                    })
+                }
             </div>
             {
                 isLogin ?
@@ -68,7 +93,7 @@ function Navbar() {
                             </div>
                         }
                     </div> :
-                    <div className='authentikasi flex items-center gap-x-4'>
+                    <div className='authentikasi flex items-center gap-x-4 order-3'>
                         <button onClick={() => {
                             navigation('/signin')
                         }} className='px-8 py-2 items-center justify-center shadow-md rounded-3xl'>Sign In</button>

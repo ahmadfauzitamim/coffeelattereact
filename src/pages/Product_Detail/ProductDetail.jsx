@@ -81,7 +81,7 @@ const ProductDetail = () => {
             <div className="ml-56 grid grid-cols-2 gap-8 relative items-center top-20 ">
               <div className="flex flex-row items-center justify-between bg-white rounded-3xl shadow-lg p-8">
                 <div className="flex flex-row gap-8 items-center justify-center">
-                  <img className='flex items-center justify-center bg-orange-500 rounded-full w-[100px] h-[100px] ' src="" alt="img" />
+                  <img className='flex items-center justify-center bg-orange-500 rounded-full w-[100px] h-[100px] ' src={product?.image} alt="img" />
                   <div className="flex flex-col gap-2 items-start">
                     <label className='font-bold text-2xl' htmlFor="">COLD BREW</label>
                     <label htmlFor="">x1 (Large)</label>
